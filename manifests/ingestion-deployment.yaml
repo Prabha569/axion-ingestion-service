@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  axion-ingestion-service
+  namespace: default
+  labels:
+    app:  axion-ingestion-service
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: axion-ingestion-service
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app:  axion-ingestion-service
+    spec:
+      containers:
+      - name:  axion-ingestion-service
+        image:  acrprabha10.azurecr.io/ingestion:v1
+        ports:
+        - containerPort:  8000
+         
