@@ -21,8 +21,9 @@ spec:
         app:  axion-ingestion-service
     spec:
       containers:
-      - name:  axion-ingestion-service
-        image:  acrprabha10.azurecr.io/ingestion:v2
+      - name: axion-ingestion-service
+        image: acrprabha10.azurecr.io/ingestion:v2
+        imagePullPolicy: Always
         ports:
         - containerPort:  8000
          
