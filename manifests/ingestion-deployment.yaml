@@ -22,7 +22,7 @@ spec:
     spec:
       containers:
       - name:  axion-ingestion-service
-        image:  acrprabha10.azurecr.io/ingestion:v1
+        image:  acrprabha10.azurecr.io/ingestion:v2
         ports:
         - containerPort:  8000
          
